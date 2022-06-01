@@ -28,6 +28,7 @@ class Battle < Sinatra::Base
       erb :play
     end
 
+
   # # Start the server if this file is executed directly (do not change the line below)
   
   run! if app_file ==$0
