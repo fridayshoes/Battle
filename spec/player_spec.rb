@@ -1,5 +1,4 @@
 require 'player'
-require 'game'
 
 describe Player do
   subject(:charlotte) { Player.new('Charlotte') }
@@ -14,13 +13,6 @@ describe Player do
   describe '#hit_points' do
     it 'returns the hit points' do
       expect(charlotte.hit_points).to eq described_class::DEFAULT_HIT_POINTS
-    end
-  end
-
-  describe '#attack' do
-    it 'damages the player' do
-      expect(mittens).to receive(:receive_damage)
-      Game.new.attack(mittens)
     end
   end
 
