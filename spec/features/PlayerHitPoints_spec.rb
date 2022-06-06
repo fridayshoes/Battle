@@ -1,13 +1,9 @@
-feature "Player 1" do
-  scenario "See Player 2 hit points" do
+feature 'Attacking' do
+  scenario 'reduce Player 2 HP by 10' do
     sign_in_and_play
-    # visit('/')
-    # fill_in :player_1_name, with: 'Charlotte'
-    # fill_in :player_2_name, with: 'Mittens'
-    # click_button 'Submit'
-
-    # save_and_open_page # will save the web page and open the browser to display it
-    
-    expect(page).to have_content 'Mittens: 60HP'
+    click_button 'Attack'
+    click_link 'OK'
+    expect(page).not_to have_content 'Mittens: 60HP'
+    expect(page).to have_content 'Mittens: 50HP'
   end
 end
